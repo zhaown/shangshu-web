@@ -1,39 +1,32 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 
-// 从 URL 路径中提取当前语言
-function getCurrentLocale(): 'zh' | 'en' {
-  if (typeof window === 'undefined') return 'zh';
-  const path = window.location.pathname;
-  const localeMatch = path.match(/^\/(zh|en)(\/|$)/);
-  return (localeMatch?.[1] as 'zh' | 'en') || 'zh';
+type LocaleType = 'zh' | 'en';
+
+interface HeaderProps {
+  locale: LocaleType;
 }
 
-// 从 URL 路径中提取当前路径（不包含语言前缀）
-function getCurrentPath(): string {
-  if (typeof window === 'undefined') return '/';
-  const path = window.location.pathname;
-  return path.replace(/^\/(zh|en)/, '') || '/';
-}
-
-export default function Header() {
+export default function Header({ locale }: HeaderProps) {
   const t = useTranslations('nav');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-  const currentLocale = getCurrentLocale();
-  const currentPath = getCurrentPath();
-  const switchLocale = currentLocale === 'zh' ? 'en' : 'zh';
+  // 从当前路径中提取不含语言前缀的路径
+  const currentPath = pathname.replace(/^\/(zh|en)/, '') || '/';
+  const switchLocale: LocaleType = locale === 'zh' ? 'en' : 'zh';
   const switchLocalePath = `/${switchLocale}${currentPath}`;
 
   const navItems = [
-    { key: 'home', href: `/${currentLocale}` },
-    { key: 'about', href: `/${currentLocale}/about` },
-    { key: 'services', href: `/${currentLocale}/services` },
-    { key: 'contact', href: `/${currentLocale}/contact` },
+    { key: 'home', href: `/${locale}` },
+    { key: 'about', href: `/${locale}/about` },
+    { key: 'services', href: `/${locale}/services` },
+    { key: 'contact', href: `/${locale}/contact` },
   ];
 
   return (
@@ -41,12 +34,12 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href={`/${currentLocale}`} className="flex items-center space-x-2">
+          <Link href={`/${locale}`} className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-[#0066FF] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">S</span>
             </div>
             <span className="font-bold text-xl text-gray-900">
-              {currentLocale === 'zh' ? '商澍科技' : 'Shangshu'}
+              {locale === 'zh' ? '商澍科技' : 'Shangshu'}
             </span>
           </Link>
 
@@ -70,7 +63,7 @@ export default function Header() {
               className="flex items-center space-x-1 text-sm text-gray-600 hover:text-[#0066FF] transition-colors"
             >
               <Globe className="w-4 h-4" />
-              <span>{currentLocale === 'zh' ? 'EN' : '中文'}</span>
+              <span>{locale === 'zh' ? 'EN' : '中文'}</span>
             </a>
 
             {/* Mobile Menu Button */}

@@ -51,17 +51,17 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextIntlClientProvider messages={messages}>
-          <Header />
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <Header locale={locale as LocaleType} />
           <main className="pt-16">{children}</main>
-          <Footer />
+          <Footer locale={locale as LocaleType} />
         </NextIntlClientProvider>
       </body>
     </html>

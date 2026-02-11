@@ -1,8 +1,13 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Target, Eye, Heart } from 'lucide-react';
 
-export default function AboutPage() {
-  const t = useTranslations();
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
 
   const values = t.raw('about.values.items') as string[];
 

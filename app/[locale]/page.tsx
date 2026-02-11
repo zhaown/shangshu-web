@@ -1,9 +1,14 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { ArrowRight, Lightbulb, Users, Shield, HeartHandshake } from 'lucide-react';
 
-export default function HomePage() {
-  const t = useTranslations();
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
 
   const features = [
     { key: 'innovation', icon: Lightbulb },

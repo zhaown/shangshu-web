@@ -1,10 +1,15 @@
-import { useTranslations, useLocale } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { Mail, MapPin } from 'lucide-react';
 
-export default function Footer() {
-  const t = useTranslations();
-  const locale = useLocale();
+type LocaleType = 'zh' | 'en';
+
+interface FooterProps {
+  locale: LocaleType;
+}
+
+export default async function Footer({ locale }: FooterProps) {
+  const t = await getTranslations({ locale });
 
   const navItems = [
     { key: 'home', href: `/${locale}` },

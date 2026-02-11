@@ -1,8 +1,13 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Code, MessageSquare, TrendingUp, Wrench } from 'lucide-react';
 
-export default function ServicesPage() {
-  const t = useTranslations();
+export default async function ServicesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
 
   const services = [
     { key: 'software', icon: Code },
