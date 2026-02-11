@@ -1,0 +1,107 @@
+{
+  "metadata": {
+    "title": "Shangshu Technology - Professional Software Development & Tech Solutions",
+    "description": "Shangshu Technology is a technology company focused on software development, technical consulting, and digital transformation, providing professional technical solutions for enterprises."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Empowering Your Digital Future",
+    "subtitle": "Shangshu Technology is dedicated to providing professional software development and technical solutions to help enterprises achieve digital transformation",
+    "cta": "Learn More",
+    "contact": "Contact Us"
+  },
+  "features": {
+    "title": "Our Advantages",
+    "subtitle": "Professional Team, Excellent Service",
+    "innovation": {
+      "title": "Innovation",
+      "description": "Continuously focusing on cutting-edge technologies to provide the most advanced solutions"
+    },
+    "professional": {
+      "title": "Expert Team",
+      "description": "Experienced technical experts with rich project experience"
+    },
+    "quality": {
+      "title": "Quality Assurance",
+      "description": "Strict quality control system to ensure delivery of high-quality products"
+    },
+    "service": {
+      "title": "Dedicated Service",
+      "description": "24/7 technical support, quick response to customer needs"
+    }
+  },
+  "about": {
+    "title": "About Shangshu Technology",
+    "subtitle": "Your Trusted Technology Partner",
+    "description": "Founded in 2020, Shangshu Technology is a high-tech enterprise focused on software development and technology services. We have an experienced technical team dedicated to providing quality technology solutions for our clients.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "Help enterprises achieve digital transformation through technological innovation, improve operational efficiency, and create greater value."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "Become an industry-leading technology service provider, offering the most professional and reliable technical solutions to our clients."
+    },
+    "values": {
+      "title": "Core Values",
+      "items": ["Innovation-Driven", "Customer First", "Integrity", "Excellence"]
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive Technical Solutions",
+    "software": {
+      "title": "Software Development",
+      "description": "Providing customized software development services, including web applications, mobile apps, and enterprise management systems. We use agile development methods to ensure efficient project delivery."
+    },
+    "consulting": {
+      "title": "Technical Consulting",
+      "description": "Providing professional technical consulting services to help enterprises with technology selection, architecture design, and technical assessment to make informed technology decisions."
+    },
+    "digital": {
+      "title": "Digital Transformation",
+      "description": "Helping traditional enterprises undergo digital transformation, optimizing business processes through technology to improve operational efficiency and enhance market competitiveness."
+    },
+    "maintenance": {
+      "title": "Operation & Maintenance",
+      "description": "Providing 24/7 technical operation and maintenance support services to ensure stable system operation. Including system monitoring, troubleshooting, and performance optimization."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Looking Forward to Working with You",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Submit",
+      "namePlaceholder": "Enter your name",
+      "emailPlaceholder": "Enter your email",
+      "phonePlaceholder": "Enter your phone number",
+      "messagePlaceholder": "Enter your message"
+    },
+    "info": {
+      "address": "Address",
+      "addressValue": "Haidian District, Beijing",
+      "email": "Email",
+      "emailValue": "contact@kingcpm.com"
+    }
+  },
+  "footer": {
+    "description": "Shangshu Technology - Professional Software Development & Technical Services",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "copyright": "© 2024 Shangshu Technology. All rights reserved."
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "description": "Contact us to discuss how we can provide the best technical solutions for your business",
+    "button": "Get in Touch"
+  }
+}
