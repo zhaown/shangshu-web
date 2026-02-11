@@ -81,10 +81,13 @@
       "phone": "Phone",
       "message": "Message",
       "submit": "Submit",
+      "submitting": "Submitting...",
       "namePlaceholder": "Enter your name",
       "emailPlaceholder": "Enter your email",
       "phonePlaceholder": "Enter your phone number",
-      "messagePlaceholder": "Enter your message"
+      "messagePlaceholder": "Enter your message",
+      "successMessage": "Thank you for your message! We will contact you soon.",
+      "errorMessage": "Submission failed, please try again later."
     },
     "info": {
       "address": "Address",

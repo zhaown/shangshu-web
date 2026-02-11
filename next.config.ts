@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  // 跳过 middleware 的静态检查，因为我们在 Cloudflare Pages 上运行
+  skipMiddlewareUrlNormalize: true,
 };
 
 export default withNextIntl(nextConfig);

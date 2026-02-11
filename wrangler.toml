@@ -3,3 +3,9 @@
 name = "shangshu-web"
 compatibility_date = "2024-01-01"
 pages_build_output_dir = "out"
+
+# D1 数据库绑定
+[[d1_databases]]
+binding = "DB"
+database_name = "shangshu-contacts"
+database_id = "ec4b3e89-20c3-4512-be30-fb538e2c6e29"  # 需要在 Cloudflare Dashboard 创建 D1 数据库后替换

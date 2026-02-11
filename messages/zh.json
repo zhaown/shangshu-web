@@ -81,10 +81,13 @@
       "phone": "电话",
       "message": "留言内容",
       "submit": "提交",
+      "submitting": "提交中...",
       "namePlaceholder": "请输入您的姓名",
       "emailPlaceholder": "请输入您的邮箱",
       "phonePlaceholder": "请输入您的电话",
-      "messagePlaceholder": "请输入您的留言内容"
+      "messagePlaceholder": "请输入您的留言内容",
+      "successMessage": "感谢您的留言！我们会尽快与您联系。",
+      "errorMessage": "提交失败，请稍后重试。"
     },
     "info": {
       "address": "地址",
