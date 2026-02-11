@@ -54,13 +54,13 @@ export default function Header() {
 
           {/* Language Switch & Mobile Menu */}
           <div className="flex items-center space-x-4">
-            <Link
+            <a
               href={switchLocalePath}
               className="flex items-center space-x-1 text-sm text-gray-600 hover:text-[#0066FF] transition-colors"
             >
               <Globe className="w-4 h-4" />
               <span>{locale === 'zh' ? 'EN' : '中文'}</span>
-            </Link>
+            </a>
 
             {/* Mobile Menu Button */}
             <button
