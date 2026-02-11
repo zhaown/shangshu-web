@@ -1,39 +1,52 @@
 'use client';
 
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 
+// 从 URL 路径中提取当前语言
+function getCurrentLocale(): 'zh' | 'en' {
+  if (typeof window === 'undefined') return 'zh';
+  const path = window.location.pathname;
+  const localeMatch = path.match(/^\/(zh|en)(\/|$)/);
+  return (localeMatch?.[1] as 'zh' | 'en') || 'zh';
+}
+
+// 从 URL 路径中提取当前路径（不包含语言前缀）
+function getCurrentPath(): string {
+  if (typeof window === 'undefined') return '/';
+  const path = window.location.pathname;
+  return path.replace(/^\/(zh|en)/, '') || '/';
+}
+
 export default function Header() {
   const t = useTranslations('nav');
-  const locale = useLocale();
-  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = [
-    { key: 'home', href: `/${locale}` },
-    { key: 'about', href: `/${locale}/about` },
-    { key: 'services', href: `/${locale}/services` },
-    { key: 'contact', href: `/${locale}/contact` },
-  ];
-
-  const switchLocale = locale === 'zh' ? 'en' : 'zh';
-  const currentPath = pathname.replace(`/${locale}`, '');
+  const currentLocale = getCurrentLocale();
+  const currentPath = getCurrentPath();
+  const switchLocale = currentLocale === 'zh' ? 'en' : 'zh';
   const switchLocalePath = `/${switchLocale}${currentPath}`;
+
+  const navItems = [
+    { key: 'home', href: `/${currentLocale}` },
+    { key: 'about', href: `/${currentLocale}/about` },
+    { key: 'services', href: `/${currentLocale}/services` },
+    { key: 'contact', href: `/${currentLocale}/contact` },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center space-x-2">
+          <Link href={`/${currentLocale}`} className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-[#0066FF] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">S</span>
             </div>
             <span className="font-bold text-xl text-gray-900">
-              {locale === 'zh' ? '商澍科技' : 'Shangshu'}
+              {currentLocale === 'zh' ? '商澍科技' : 'Shangshu'}
             </span>
           </Link>
 
@@ -43,9 +56,7 @@ export default function Header() {
               <Link
                 key={item.key}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-[#0066FF] ${
-                  pathname === item.href ? 'text-[#0066FF]' : 'text-gray-600'
-                }`}
+                className="text-sm font-medium transition-colors hover:text-[#0066FF] text-gray-600"
               >
                 {t(item.key)}
               </Link>
@@ -59,7 +70,7 @@ export default function Header() {
               className="flex items-center space-x-1 text-sm text-gray-600 hover:text-[#0066FF] transition-colors"
             >
               <Globe className="w-4 h-4" />
-              <span>{locale === 'zh' ? 'EN' : '中文'}</span>
+              <span>{currentLocale === 'zh' ? 'EN' : '中文'}</span>
             </a>
 
             {/* Mobile Menu Button */}
@@ -80,9 +91,7 @@ export default function Header() {
               <Link
                 key={item.key}
                 href={item.href}
-                className={`block py-2 text-sm font-medium transition-colors hover:text-[#0066FF] ${
-                  pathname === item.href ? 'text-[#0066FF]' : 'text-gray-600'
-                }`}
+                className="block py-2 text-sm font-medium transition-colors hover:text-[#0066FF] text-gray-600"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t(item.key)}
