@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- English Homepage -->
+  <url>
+    <loc>https://kingcpm.com/en/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kingcpm.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kingcpm.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kingcpm.com/zh/" />
+  </url>
+
+  <!-- English About Page -->
+  <url>
+    <loc>https://kingcpm.com/en/about/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kingcpm.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kingcpm.com/zh/about/" />
+  </url>
+
+  <!-- English Services Page -->
+  <url>
+    <loc>https://kingcpm.com/en/services/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kingcpm.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kingcpm.com/zh/services/" />
+  </url>
+
+  <!-- English Contact Page -->
+  <url>
+    <loc>https://kingcpm.com/en/contact/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kingcpm.com/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://kingcpm.com/zh/contact/" />
+  </url>
+
+</urlset>

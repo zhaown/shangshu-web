@@ -1,0 +1,13 @@
+# robots.txt for kingcpm.com
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://kingcpm.com/sitemap.xml
+Sitemap: https://kingcpm.com/sitemap-zh.xml
+Sitemap: https://kingcpm.com/sitemap-en.xml
+
+# Disallow unnecessary paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
